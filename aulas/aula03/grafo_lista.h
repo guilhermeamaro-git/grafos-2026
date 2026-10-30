@@ -1,19 +1,21 @@
-#ifndef GRAFO_LISTA_H
-#define GRAFO_LISTA_H
+#ifndef GRAFO_LISTA
+#define GRAFO_LISTA
 
+#define MAX_VERTICES 10
 
 typedef struct No {
     int vertice;
-    struct No* proximo;
+    struct No *proximo;
 } No;
 
 typedef struct {
-    No** lista;
+    No **lista;
     int num_vertices;
 } GrafoLista;
 
-GrafoLista* criar_grafo(int n);
-void adicionar_aresta(GrafoLista* g, int u, int v);
+GrafoLista *criar_grafo(int n);
+void adicionar_aresta(GrafoLista *g, int u, int v);
+void adicionar_arco(GrafoLista *g, int u, int v);
+void imprimir_grafo(GrafoLista *g);
 
-
-#endif // GRAFO_LISTA_H
+#endif
